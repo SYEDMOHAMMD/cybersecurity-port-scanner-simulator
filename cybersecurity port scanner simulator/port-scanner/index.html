@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Port Scanner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>[ Port Scanner ] <span>by Mohammad</span> <span class="badge">AI-Powered</span></h1>
+    <p>TCP connect scanner with Claude AI threat analysis — built as a cybersecurity portfolio project</p>
+  </div>
+
+  <div class="controls">
+    <div class="field">
+      <label>Target Host</label>
+      <input type="text" id="host" value="scanme.nmap.org" placeholder="hostname or IP" />
+    </div>
+    <div class="field">
+      <label>Start Port</label>
+      <input type="number" id="p1" value="1" min="1" max="65535" />
+    </div>
+    <div class="field">
+      <label>End Port</label>
+      <input type="number" id="p2" value="1024" min="1" max="65535" />
+    </div>
+    <button class="scan-btn" id="scanBtn" onclick="startScan()">▶ Scan</button>
+  </div>
+
+  <div class="terminal" id="terminal">
+    <div class="line dim">// Ready. Enter a target host and press Scan.</div>
+    <div class="line dim">// Legal notice: Only scan systems you own or have permission to scan.</div>
+    <div class="line dim">// scanme.nmap.org is Nmap's official legal test target.</div>
+  </div>
+
+  <div class="stats-row" id="statsRow">
+    <div class="stat"><div class="val" id="sPorts">0</div><div class="lbl">Open Ports</div></div>
+    <div class="stat"><div class="val" id="sTime">0s</div><div class="lbl">Scan Time</div></div>
+    <div class="stat"><div class="val" id="sRisk">—</div><div class="lbl">Risk Level</div></div>
+  </div>
+
+  <div class="ai-panel" id="aiPanel">
+    <div class="ai-header">
+      <span class="spinner" id="aiSpinner"></span>
+      <span id="aiTitle">AI Security Analysis</span>
+    </div>
+    <div class="risk-bar"><div class="risk-fill" id="riskFill"></div></div>
+    <div class="ai-text" id="aiText">Analyzing open ports with Claude AI...</div>
+    <table class="port-table" id="portTable">
+      <thead><tr><th>Port</th><th>Service</th><th>Risk</th><th>Notes</th></tr></thead>
+      <tbody id="portBody"></tbody>
+    </table>
+    <button class="ask-btn" id="askBtn" onclick="openGitHub()">View source on GitHub ↗</button>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
