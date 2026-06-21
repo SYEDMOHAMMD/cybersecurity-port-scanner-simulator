@@ -63,10 +63,10 @@ It is intended to demonstrate concepts of port scanning and security analysis in
 
 ## Author
 
-**Mohammad [Your Name]**  
+**Mohammad Qaim  
 2nd Year Computer Science Student  
 Interest: Cybersecurity, AI Applications  
-Location: Rawalpindi, Pakistan  
+Location: Islamabad, Pakistan  
 
 
 
